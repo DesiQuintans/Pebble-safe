@@ -1,0 +1,52 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+
+
+
+# This is a 'Pebble-Safe' theme
+
+Lorem ipsum **dolor sit amet**, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris _nisi ut aliquip_ ex ea commodo consequat. 
+
+Duis aute irure dolor in reprehenderit in `voluptate velit esse` cillum dolore eu 
+fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+qui officia deserunt mollit anim id est laborum. 
+
+```{r folded_block}
+
+```
+
+
+```{r blockname, echo=TRUE, eval=FALSE}
+#' Mirror the rows/cols of a matrix
+#'
+#' @param mat (Matrix) A matrix.
+#' @param MARGIN (Integer) `1` to reverse order of cols, `2` to reverse rows.
+#'
+#' @return A mirrored matrix.
+#' @export
+#'
+#' @md
+mirror_matrix <- function(mat, MARGIN = 2) {
+    # Here's an inline comment.
+    new_order <- dim(mat)[MARGIN]:1
+
+    if (MARGIN == 1) {
+        mat[new_order, ]
+    } else if (MARGIN == 2) {
+        mat[, new_order]
+    } else {
+        stop("Argument 'MARGIN' must be set to either '1' (rows) or '2' (cols).")
+    }
+}
+```
+
+
+
+
