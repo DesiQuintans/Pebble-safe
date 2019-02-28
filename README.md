@@ -43,6 +43,10 @@ Hack in 10 pt <https://sourcefoundry.org/hack>.
 
 5.  Click *Apply* to apply the theme.
 
+**NOTE:** The `rstudioapi::addTheme()` function does not currently work
+for this theme. You need to manually install Pebble-Safe with the above
+steps.
+
 ## Colourblind-friendly palettes
 
 Choosing colours for syntax highlight has a few extra difficulties:
