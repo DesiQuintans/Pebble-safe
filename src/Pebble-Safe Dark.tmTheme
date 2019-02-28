@@ -16,7 +16,7 @@
 				<key>background</key>
 				<string>#292929</string>
 				<key>caret</key>
-				<string>#E7298A</string>
+				<string>#E6BEFF</string>
 				<key>foreground</key>
 				<string>#FCFCFC</string>
 				<key>invisibles</key>
@@ -24,7 +24,7 @@
 				<key>lineHighlight</key>
 				<string>#B3B3B3</string>
 				<key>selection</key>
-				<string>#FFE119BF</string>
+				<string>#FFFF99A1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -37,7 +37,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#4363D8</string>
+				<string>#E7298A</string>
 			</dict>
 		</dict>
 		<dict>
@@ -60,9 +60,20 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>constant</string>
+			<string>constant.language</string>
 			<key>scope</key>
-			<string>constant</string>
+			<string>constant.language</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#E6BEFF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>keyword</string>
+			<key>scope</key>
+			<string>keyword</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -71,18 +82,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>keyword</string>
-			<key>scope</key>
-			<string>keyword</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#E7298A</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Brackets and operators</string>
+			<string>keyword.operator</string>
 			<key>scope</key>
 			<string>keyword.operator</string>
 			<key>settings</key>
@@ -93,37 +93,26 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>.active_debug_line</string>
-			<key>scope</key>
-			<string>marker-layer.active_debug_line</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#B3B3B3</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
 			<string>markup.heading</string>
 			<key>scope</key>
 			<string>markup.heading</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#E7298A</string>
+				<string>#FFE119</string>
 				<key>fontStyle</key>
 				<string>  underline</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>YAML metadata</string>
+			<string>meta.tag</string>
 			<key>scope</key>
 			<string>meta.tag</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#4363D8</string>
+				<string>#E6BEFF</string>
 			</dict>
 		</dict>
 		<dict>
@@ -139,13 +128,35 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Markdown blocks</string>
+			<string>support.function</string>
 			<key>scope</key>
 			<string>support.function</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
-				<string>#E7298A</string>
+				<string>#FFE119</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>constant.numeric</string>
+			<key>scope</key>
+			<string>constant.numeric</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#E6BEFF</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>support.class</string>
+			<key>scope</key>
+			<string>support.class</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#4363D8</string>
 			</dict>
 		</dict>
 	</array>

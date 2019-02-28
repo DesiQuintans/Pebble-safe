@@ -18,11 +18,12 @@
 }
 
 .ace_cursor {
-  color: #E7298A;
+  color: #E6BEFF;
 }
 
 .ace_marker-layer .ace_selection {
-  background: rgba(255, 225, 25, 0.75);
+  padding: 1px 0px 1px 2px;
+  background: #FFFF99;
 }
 
 .ace_selection.ace_start {
@@ -36,34 +37,34 @@
 
 .ace_marker-layer .ace_bracket {
   margin: -1px 0 0 -1px;
-  border: 1px solid #B3B3B3;
+  border: 1px solid #E8E8E8;
 }
 
 .ace_marker-layer .ace_active-line {
-  background: #B3B3B3;
+  background: #E8E8E8;
 }
 
 .ace_gutter-active-line {
-  background-color: #B3B3B3;
+  background-color: #E8E8E8;
 }
 
 .ace_marker-layer .ace_selected-word {
   padding: 1px 0px 1px 2px;
-  border: 2px solid rgba(255, 225, 25, 0.75)
+  border: 2px solid #FFFF99
 }
 
 .ace_fold {
-  background-color: #E7298A;
+  background-color: #4363D8;
   border-color: #000000;
 }
 
 .ace_invisible {
-  color: #B3B3B3;
+  color: #E8E8E8;
 }
 
 
 .ace_keyword {
-  color: #E7298A;
+  color: #4363D8;
 
 }
 
@@ -72,12 +73,22 @@
 
 }
 
-.ace_constant {
-  color: #4363D8;
+.ace_constant.ace_language {
+  color: #E7298A;
+
+}
+
+.ace_constant.ace_numeric {
+  color: #E7298A;
 
 }
 
 .ace_support.ace_function {
+  color: #4363D8;
+
+}
+
+.ace_support.ace_class {
   color: #E7298A;
 
 }
@@ -88,7 +99,7 @@
 }
 
 .ace_string {
-  color: #4363D8;
+  color: #E7298A;
 
 }
 
@@ -103,42 +114,40 @@
 }
 
 .ace_meta.ace_tag {
-  color: #E6BEFF;
+  color: #4363D8;
 
 }
 
 .ace_markup.ace_heading {
   text-decoration: underline;
-  color: #E7298A;
+  color: #4363D8;
 
 }
 
 .ace_heading {
   text-decoration: underline;
-  color: #E7298A;
+  color: #4363D8;
 
-}
-
-.ace_marker-layer .ace_active_debug_line {
-  background-color: #FFFF99;
-
-  position: absolute;
-  z-index: -1;
 }
 .nocolor.ace_editor .ace_line span {
-  color: #e7298a !important;
+  color: #4363d8 !important;
 }
 .ace_bracket {
   margin: 0 !important;
   border: 0 !important;
-  background-color: #FD5FF0;
+  background-color: #E6BEFF;
 }
 .ace_marker-layer .ace_foreign_line {
   position: absolute;
   z-index: -1;
-  background-color: #f7f7f7;
+  background-color: #fdfdfd;
   border-right: 2px solid #cccccc;
   margin-right: 5px;
+}
+.ace_marker-layer .ace_active_debug_line {
+  position: absolute;
+  z-index: -1;
+  background-color: #FEED9A;
 }
 .ace_marker-layer .ace_find_line {
   position: absolute;
