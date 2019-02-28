@@ -16,10 +16,6 @@ Pebble-Safe, a colourblind-safe RStudio 1.2.x theme
       - [2. Convert it to a `.rsTheme` in
         RStudio](#convert-it-to-a-.rstheme-in-rstudio)
       - [3. Edit the theme CSS by hand](#edit-the-theme-css-by-hand)
-  - [Colourblind simulations of final
-    themes](#colourblind-simulations-of-final-themes)
-      - [Light theme](#light-theme)
-      - [Dark theme](#dark-theme)
 
 ## Preview
 
@@ -188,12 +184,22 @@ differences.
 ### Selected theme colours
 
 So I guess these are my theme colours\! These colours are okay under
-simulated deuteranopia, protanopia, and
-    tritanopia.
+simulated deuteranopia, protanopia, and tritanopia. I include the
+deuteranopic versions of the colours because I will use those in tmTheme
+Editor to ensure that I am designing for the vision needs of colourblind
+people, not my own aesthetic
+    sense.
+
+    ## Normal vision colours:
 
     ## [1] "#292929" "#4363D8" "#E7298A" "#E6BEFF" "#FFE119" "#FCFCFC" "#FFFF99"
 
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+    ## 
+    ## Deuteranopic version:
+
+    ## [1] "#E9E914" "#FEFE99" "#CACAFE" "#5B5BD8" "#2A2A2A" "#888886" "#FBFBFB"
+
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-10-2.png)<!-- -->
 
 ## Designing the themes
 
@@ -219,6 +225,42 @@ These are the resources for designing a
   - <https://support.rstudio.com/hc/en-us/articles/115011846747-Using-RStudio-Themes>
   - <https://rstudio.github.io/rstudio-extensions/rstudio-theme-creation.html>
 
+#### Scope names that are actually used in RStudio
+
+I compiled this list by editing the **3024 Day** theme in [TmTheme
+Editor](https://tmtheme-editor.herokuapp.com), changing all of the
+colours to a unique colour in a series (\#DDDD01, \#DDDD02, …). I
+downloaded the `.tmTheme`, converted it to `.rsTheme` with
+`rstudioapi::convertTheme()`, and then retrieved all of the colour codes
+that were still present in the converted document.
+
+Once that was done I extracted all of the scope names for the preserved
+colours, put them into a new theme, and assigned each name a unique
+colour from `desiderata::palette_distinct(spaced = FALSE)`. I downloaded
+the theme, converted it, and then viewed one of my Rmarkdown files in
+high zoom while using a colour picker tool to find out which of the
+unique colours were actually used by
+RStudio.
+
+| tmTheme Editor tab | Scope             | GUI effect                                     | Code syntax highlighting                                                                    | Rmarkdown highlighting                                                                             |
+| :----------------- | :---------------- | :--------------------------------------------- | :------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------- |
+| General            | background        | Pane background colour.                        |                                                                                             |                                                                                                    |
+| General            | caret             | Text cursor colour.                            |                                                                                             |                                                                                                    |
+| General            | foreground        | All plain/unstyled text.                       | Argument names.                                                                             |                                                                                                    |
+| General            | invisibles        | Invisible objects such as non-breaking spaces. |                                                                                             |                                                                                                    |
+| General            | lineHighlight     | Current-line marker.                           |                                                                                             |                                                                                                    |
+| General            | selection         | Selection box (when drag-selecting text).      | Colour of selection box when you select text.                                               |                                                                                                    |
+| Scopes             | comment           |                                                | Comments in code. Text in Roxygen blocks.                                                   |                                                                                                    |
+| Scopes             | constant.language | Messages, errors, and warnings.                | TRUE, FALSE, NA, NULL, NaN, Inf, etc.                                                       | Italicised text (\*text\* or \_text\_).                                                            |
+| Scopes             | constant.numeric  |                                                | Numbers.                                                                                    | Bold text (\*\*text\*\*).                                                                          |
+| Scopes             | keyword           |                                                | Function names. Roxygen fields (e.g. @param).                                               |                                                                                                    |
+| Scopes             | keyword.operator  |                                                | Brackets, assignment arrows, operators.                                                     |                                                                                                    |
+| Scopes             | markup.heading    |                                                |                                                                                             | Headings, only the \# characters. The rest of the heading text must be edited in the .rsTheme CSS. |
+| Scopes             | meta.tag          |                                                |                                                                                             | Metadata tags in YAML header (title, output, …)                                                    |
+| Scopes             | string            |                                                | Character strings.                                                                          | Block quotes (\> text). Strings in YAML header.                                                    |
+| Scopes             | support.class     |                                                | Package namespace names (dplyr::)                                                           |                                                                                                    |
+| Scopes             | support.function  |                                                | Function names if “Highlight R function calls” is enabled. Argument names in Roxygen block. | Preformatted text (\`text\`). Code block headers. Special characters in YAML header.               |
+
 ### 2\. Convert it to a `.rsTheme` in RStudio
 
 ``` r
@@ -233,9 +275,9 @@ features need to be added by hand.
 
 These edits are made inside the converted `.rstheme` files. For me,
 these files are located in `Documents\.R\rstudio\themes`. I edit them in
-place and copy them to this repo to upload.
+place and copy them to this repo to distribute them.
 
-#### 3a. Fix heading style
+#### Fix heading style
 
 Only the text colour of the markdown headings can be safely changed.
 Changing the background colour masks the selection box, and changing the
@@ -245,37 +287,17 @@ header line.
 ``` css
 .ace_markup.ace_heading {
   text-decoration: underline;
-  color: #E7298A;
+  color: #REPLACEME;
 }
 
 .ace_heading {
   text-decoration: underline;
-  color: #E7298A;
+  color: #REPLACEME;
 
 }
 ```
 
-#### 3b. Fix selection box
-
-The box has more padding around it and is a darker magenta than the
-cursor. The magenta makes search results easier to spot.
-`ace_selected-word` is the box that highlights search results that are
-not currently selected.
-
-``` css
-.ace_marker-layer .ace_selection {
-  padding: 1px 0px 1px 2px;
-  background: rgba(255, 225, 25, 0.75);
-  
-}
-
-.ace_marker-layer .ace_selected-word {
-  padding: 1px 0px 1px 2px;
-  border: 2px solid rgba(255, 225, 25, 0.75);
-}
-```
-
-#### 3c. Matching bracket indicator
+#### Matching bracket indicator
 
 Make it magenta to match the cursor.
 
@@ -283,11 +305,11 @@ Make it magenta to match the cursor.
 .ace_bracket {
   margin: 0 !important;
   border: 0 !important;
-  background-color: #E7298A;
+  background-color: #CURSORCOLOUR;
 }
 ```
 
-#### 3d. Markdown block background
+#### Markdown block background
 
 I made the background of the markdown blocks more similar to the normal
 background, and I added borders on the left and right sides of the block
@@ -306,31 +328,11 @@ is not a single box element.
       margin-right: 5px;
     }
 
-#### 3e. Column margin line
+#### Column margin line
+
+The default is too bright in the Dark variant.
 
     .ace_print-margin {
       width: 1px;
       background: #424242;
     }
-
-## Colourblind simulations of final themes
-
-### Light theme
-
-![](_img/light.png)
-
-![](_img/light-deut.png)
-
-![](_img/light-prot.png)
-
-![](_img/light-trit.png)
-
-### Dark theme
-
-![](_img/dark.png)
-
-![](_img/dark-deut.png)
-
-![](_img/dark-prot.png)
-
-![](_img/dark-trit.png)
