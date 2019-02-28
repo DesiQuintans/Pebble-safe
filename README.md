@@ -29,23 +29,34 @@ Hack in 10 pt <https://sourcefoundry.org/hack>.
 
 ## Installation
 
-1.  You need to be running RStudio v 1.2.x. At the time of writing
-    (2019-02-19) this is only available as a Preview, and you can
-    download the newest Preview here
-    <https://www.rstudio.com/products/rstudio/download/preview/>.
+You need to be running RStudio v 1.2.x. At the time of writing
+(2019-02-19) this is only available as a Preview, and you can download
+the newest Preview here
+<https://www.rstudio.com/products/rstudio/download/preview/>.
 
-2.  Download one of the `.rstheme` files in the root of this repo.
+First, install the `rstudioapi` package.
 
-3.  In RStudio 1.2.x, go to *Tools* → *Global Options* → *Appearance*.
+``` r
+install.packages("rstudioapi")
+```
 
-4.  Click the *Add* button underneath the list, choose your downloaded
-    `.rstheme`, and click *Open*.
+Then, run the commands below to install the theme.
 
-5.  Click *Apply* to apply the theme.
+``` r
+# Light variant:
+rstudioapi::addTheme("https://github.com/DesiQuintans/Pebble-safe/releases/download/1.0.0/Pebble-Safe_Light.rstheme",
+apply = TRUE, force = TRUE)
 
-**NOTE:** The `rstudioapi::addTheme()` function does not currently work
-for this theme. You need to manually install Pebble-Safe with the above
-steps.
+# Dark variant
+rstudioapi::addTheme("https://github.com/DesiQuintans/Pebble-safe/releases/download/1.0.0/Pebble-Safe_Dark.rstheme",
+apply = TRUE, force = TRUE)
+```
+
+You can change the active theme at any time by going to (Tools → Global
+Options → Appearance) and applying a new theme.
+
+The themes can be uninstalled by selecting them in the list and clicking
+(Remove).
 
 ## Colourblind-friendly palettes
 
