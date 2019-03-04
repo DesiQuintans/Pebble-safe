@@ -20,18 +20,20 @@ Pebble-Safe, a colourblind-safe RStudio 1.2.x theme
 ## Preview
 
 Pebble-Safe is a colourblind-friendly theme for RStudio 1.2.x. It comes
-in Light and Dark variants. The font used in the screenshots below is
-Hack in 10 pt <https://sourcefoundry.org/hack>.
-
-![](_img/light.png)
+in Light and Dark variants, but I recommend the Dark variant because it
+makes better use of the few safe colours that are available. The font
+used in the screenshots below is Hack in 10 pt
+<https://sourcefoundry.org/hack>.
 
 ![](_img/dark.png)
+
+![](_img/light.png)
 
 ## Installation
 
 You need to be running RStudio v 1.2.x. At the time of writing
-(2019-02-19) this is only available as a Preview, and you can download
-the newest Preview here
+(2019-03-03) this is only available as a Preview, so you need to
+download and install the newest Preview here
 <https://www.rstudio.com/products/rstudio/download/preview/>.
 
 First, install the `rstudioapi` package.
@@ -60,7 +62,8 @@ The themes can be uninstalled by selecting them in the list and clicking
 
 ## Colourblind-friendly palettes
 
-Choosing colours for syntax highlight has a few extra difficulties:
+Choosing colours for syntax highlighting has a few extra difficulties
+compared to designing a poster or chart:
 
 1.  Text at normal sizes has thinner outlines that make subtle colours
     harder to differentiate.
@@ -68,13 +71,13 @@ Choosing colours for syntax highlight has a few extra difficulties:
     reader, and it’s hard to convey lots of information with a smaller
     palette of styles and still have each type of information clearly
     distinct from the others.
-3.  The background of the text can affect the clarity of the colours. I
-    personally find colours on a light background to be more bleached
-    than colours on a dark background.
+3.  The background of the text can affect the clarity of the colours.
+    Yellow is one of the few safe colours out there, and yellow text on
+    a white background is basically unreadable.
 
 I found a few reliable sources for colourblind-friendly colour palettes.
 
-The table of 8 colours below is from Wong (2011).
+This table of 8 colours is from Wong (2011).
 
 > Wong, Bang. “Points of View: Color Blindness.” Nature Methods 8 (May
 > 27, 2011): 441.  
@@ -111,8 +114,9 @@ show_colours(sasha_cols)
 
 ## Testing the colours
 
-I’ve also added `#FCFCFC`, my preferred light background colour, just a
-whisker off pure white so it’s a little easier on the
+Here are all of the colours in one swatch. I’ve also added `#FCFCFC`, my
+preferred light background colour, just a whisker off pure white so it’s
+a little easier on the
 eyes.
 
 ``` r
@@ -176,7 +180,14 @@ show_colours(cols$hex_col)
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-We eliminated 3 colours.
+We eliminated these 3 colours
+:
+
+``` r
+show_colours(c("#2A78B5", "#2AA179", "#A9A9A9"), main = "Excluded colours")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ### Manually select colours under red-green brightness
 
@@ -184,7 +195,7 @@ We eliminated 3 colours.
 show_colours(cols$hex_deut)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 I hand-picked all of the colours that I could easily differentiate. I
 made sure they were easy to differentiate them by dragging them beside
@@ -192,18 +203,15 @@ each other in my colour picker (JCPicker
 <http://annystudio.com/software/colorpicker>) and squinting at their
 differences.
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
-
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
+![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
 ### Selected theme colours
 
 So I guess these are my theme colours\! These colours are okay under
-simulated deuteranopia, protanopia, and tritanopia. I include the
-deuteranopic versions of the colours because I will use those in tmTheme
-Editor to ensure that I am designing for the vision needs of colourblind
-people, not my own aesthetic
-    sense.
+simulated deuteranopia, protanopia, and
+    tritanopia.
 
     ## Normal vision colours:
 
@@ -214,7 +222,7 @@ people, not my own aesthetic
 
     ## [1] "#E9E914" "#FEFE99" "#CACAFE" "#5B5BD8" "#2A2A2A" "#888886" "#FBFBFB"
 
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-10-2.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-11-2.png)<!-- -->
 
 ## Designing the themes
 
