@@ -8,7 +8,7 @@ Pebble-Safe, a colourblind-safe RStudio 1.2.x theme
       - [Try to programmatically remove similar colours under red-green
         blindness](#try-to-programmatically-remove-similar-colours-under-red-green-blindness)
       - [Manually select colours under red-green
-        brightness](#manually-select-colours-under-red-green-brightness)
+        blindness](#manually-select-colours-under-red-green-blindness)
       - [Selected theme colours](#selected-theme-colours)
   - [Designing the themes](#designing-the-themes)
       - [1. Use a GUI editor to make a
@@ -189,7 +189,7 @@ show_colours(c("#2A78B5", "#2AA179", "#A9A9A9"), main = "Excluded colours")
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-### Manually select colours under red-green brightness
+### Manually select colours under red-green blindness
 
 ``` r
 show_colours(cols$hex_deut)
@@ -197,11 +197,11 @@ show_colours(cols$hex_deut)
 
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
-I hand-picked all of the colours that I could easily differentiate. I
-made sure they were easy to differentiate them by dragging them beside
-each other in my colour picker (JCPicker
-<http://annystudio.com/software/colorpicker>) and squinting at their
-differences.
+I hand-picked all of the colours that I could easily differentiate,
+trying to maximise the differences between them. I made sure they were
+easy to differentiate them by dragging them beside each other in my
+colour picker (JCPicker <http://annystudio.com/software/colorpicker>)
+and squinting at their differences.
 
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
@@ -272,7 +272,7 @@ RStudio.
 | General            | foreground        | All plain/unstyled text.                       | Argument names.                                                                             |                                                                                                    |
 | General            | invisibles        | Invisible objects such as non-breaking spaces. |                                                                                             |                                                                                                    |
 | General            | lineHighlight     | Current-line marker.                           |                                                                                             |                                                                                                    |
-| General            | selection         | Selection box (when drag-selecting text).      | Colour of selection box when you select text.                                               |                                                                                                    |
+| General            | selection         | Selection box (when drag-selecting text).      |                                                                                             |                                                                                                    |
 | Scopes             | comment           |                                                | Comments in code. Text in Roxygen blocks.                                                   |                                                                                                    |
 | Scopes             | constant.language | Messages, errors, and warnings.                | TRUE, FALSE, NA, NULL, NaN, Inf, etc.                                                       | Italicised text (\*text\* or \_text\_).                                                            |
 | Scopes             | constant.numeric  |                                                | Numbers.                                                                                    | Bold text (\*\*text\*\*).                                                                          |

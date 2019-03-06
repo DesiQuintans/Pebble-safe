@@ -158,13 +158,13 @@ show_colours(c("#2A78B5", "#2AA179", "#A9A9A9"), main = "Excluded colours")
 ```
 
 
-### Manually select colours under red-green brightness
+### Manually select colours under red-green blindness
 
 ```{r}
 show_colours(cols$hex_deut)
 ```
 
-I hand-picked all of the colours that I could easily differentiate. I made sure they were easy to differentiate them by dragging them beside each other in my colour picker (JCPicker <http://annystudio.com/software/colorpicker>) and squinting at their differences.
+I hand-picked all of the colours that I could easily differentiate, trying to maximise the differences between them. I made sure they were easy to differentiate them by dragging them beside each other in my colour picker (JCPicker <http://annystudio.com/software/colorpicker>) and squinting at their differences.
 
 ```{r echo=FALSE}
 my_deut <- c("#E9E914", "#FEFE99", "#CACAFE", "#5B5BD8", "#2A2A2A", 
@@ -235,7 +235,7 @@ Once that was done I extracted all of the scope names for the preserved colours,
 | General            | foreground        | All plain/unstyled text.                       | Argument names.                                                                             |                                                                                                   |
 | General            | invisibles        | Invisible objects such as non-breaking spaces. |                                                                                             |                                                                                                   |
 | General            | lineHighlight     | Current-line marker.                           |                                                                                             |                                                                                                   |
-| General            | selection         | Selection box (when drag-selecting text).      | Colour of selection box when you select text.                                               |                                                                                                   |
+| General            | selection         | Selection box (when drag-selecting text).      |                                                                                             |                                                                                                   |
 | Scopes             | comment           |                                                | Comments in code. Text in Roxygen blocks.                                                   |                                                                                                   |
 | Scopes             | constant.language | Messages, errors, and warnings.                | TRUE, FALSE, NA, NULL, NaN, Inf, etc.                                                       | Italicised text (\*text\* or \_text\_).                                                           |
 | Scopes             | constant.numeric  |                                                | Numbers.                                                                                    | Bold text (\*\*text\*\*).                                                                         |
