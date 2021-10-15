@@ -18,7 +18,7 @@
 
 ## Preview
 
-Pebble-Safe is a colourblind-friendly theme for RStudio 1.2.x. It comes
+Pebble-Safe is a colourblind-friendly theme for RStudio. It comes
 in Light and Dark variants, but I recommend the Dark variant because it
 makes better use of the few safe colours that are available. The font
 used in the screenshots below is Hack in 10 pt
