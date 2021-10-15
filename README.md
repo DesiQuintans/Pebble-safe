@@ -1,5 +1,4 @@
-Pebble-Safe, a colourblind-safe RStudio 1.2.x theme
-================
+# Pebble-Safe, a colourblind-safe RStudio 1.2.x theme
 
   - [Preview](#preview)
   - [Installation](#installation)
@@ -31,10 +30,7 @@ used in the screenshots below is Hack in 10 pt
 
 ## Installation
 
-You need to be running RStudio v 1.2.x. At the time of writing
-(2019-03-03) this is only available as a Preview, so you need to
-download and install the newest Preview here
-<https://www.rstudio.com/products/rstudio/download/preview/>.
+You need to be running RStudio v 1.2.x or greater.
 
 First, install the `rstudioapi` package.
 
@@ -45,12 +41,12 @@ install.packages("rstudioapi")
 Then, run the commands below to install the theme.
 
 ``` r
-# Light variant:
-rstudioapi::addTheme("https://github.com/DesiQuintans/Pebble-safe/releases/download/1.0.0/Pebble-Safe_Light.rstheme",
-apply = TRUE, force = TRUE)
-
 # Dark variant
 rstudioapi::addTheme("https://github.com/DesiQuintans/Pebble-safe/releases/download/1.0.0/Pebble-Safe_Dark.rstheme",
+apply = TRUE, force = TRUE)
+
+# Light variant:
+rstudioapi::addTheme("https://github.com/DesiQuintans/Pebble-safe/releases/download/1.0.0/Pebble-Safe_Light.rstheme",
 apply = TRUE, force = TRUE)
 ```
 
@@ -60,7 +56,9 @@ Options → Appearance) and applying a new theme.
 The themes can be uninstalled by selecting them in the list and clicking
 (Remove).
 
-## Colourblind-friendly palettes
+---
+
+# Nerd info about how I chose a colourblind-friendly palette
 
 Choosing colours for syntax highlighting has a few extra difficulties
 compared to designing a poster or chart:
