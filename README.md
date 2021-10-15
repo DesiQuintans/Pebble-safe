@@ -1,4 +1,4 @@
-# Pebble-Safe, a colourblind-safe RStudio 1.2.x theme
+# Pebble-Safe, a colourblind-safe RStudio theme
 
   - [Preview](#preview)
   - [Installation](#installation)
