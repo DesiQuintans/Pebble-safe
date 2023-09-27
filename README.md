@@ -1,5 +1,7 @@
 # Pebble-Safe, a colourblind-safe RStudio theme
 
+## (Hey, kid, if you're looking for a better light theme that's colourblind-safe, try my new theme called [Epergoes](https://github.com/DesiQuintans/epergoes). Okay bye!)
+
   - [Preview](#preview)
   - [Installation](#installation)
   - [Colourblind-friendly palettes](#colourblind-friendly-palettes)
